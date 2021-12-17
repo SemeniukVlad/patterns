@@ -47,6 +47,10 @@ class PizzaBuilder implements PizzaInterface{
         this.pizza.specialSauce = specialSauce;
         return this;
     }
+
+    build(): PizzaBuilder{
+        return this;
+    }
 }
 
 class Pizza{
@@ -61,27 +65,12 @@ class Pizza{
     ){}
 }
 
-class PizzaDirector{
-    constructor(){}
-    buildPizza(name: string): PizzaBuilder{
-        if (name === 'regular+'){
-            return new PizzaBuilder()
-                        .addIngredient4('onion')
-                        .addIngredient5('pickles')
-                        .changeIngredient3('chicken');
-        } else if (name === 'premium'){
-            return new PizzaBuilder()
+const pizzaMaker = new PizzaBuilder();
+const pizza = pizzaMaker.changeIngredient3('chicken')
                         .addIngredient4('mushrooms')
                         .addIngredient5('pepper')
                         .addIngredient6('meat')
-                        .changeSpecialSauce('super special sauce');
-        }
-    }
-}
+                        .changeSpecialSauce('super special sauce')
+                        .build();
 
-const director = new PizzaDirector();
-const pizzaChoice1 = director.buildPizza('premium');
-const pizzaChoice2 = director.buildPizza('regular+');
-
-console.log(pizzaChoice1);
-console.log(pizzaChoice2);
+console.log(pizza);

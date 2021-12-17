@@ -31,6 +31,9 @@ var PizzaBuilder = /** @class */ (function () {
         this.pizza.specialSauce = specialSauce;
         return this;
     };
+    PizzaBuilder.prototype.build = function () {
+        return this;
+    };
     return PizzaBuilder;
 }());
 var Pizza = /** @class */ (function () {
@@ -49,28 +52,11 @@ var Pizza = /** @class */ (function () {
     }
     return Pizza;
 }());
-var PizzaDirector = /** @class */ (function () {
-    function PizzaDirector() {
-    }
-    PizzaDirector.prototype.buildPizza = function (name) {
-        if (name === 'regular+') {
-            return new PizzaBuilder()
-                .addIngredient4('onion')
-                .addIngredient5('pickles')
-                .changeIngredient3('chicken');
-        }
-        else if (name === 'premium') {
-            return new PizzaBuilder()
-                .addIngredient4('mushrooms')
-                .addIngredient5('pepper')
-                .addIngredient6('meat')
-                .changeSpecialSauce('super special sauce');
-        }
-    };
-    return PizzaDirector;
-}());
-var director = new PizzaDirector();
-var pizzaChoice1 = director.buildPizza('premium');
-var pizzaChoice2 = director.buildPizza('regular+');
-console.log(pizzaChoice1);
-console.log(pizzaChoice2);
+var pizzaMaker = new PizzaBuilder();
+var pizza = pizzaMaker.changeIngredient3('chicken')
+    .addIngredient4('mushrooms')
+    .addIngredient5('pepper')
+    .addIngredient6('meat')
+    .changeSpecialSauce('super special sauce')
+    .build();
+console.log(pizza);
