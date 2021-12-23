@@ -54,9 +54,7 @@ var Pizza = /** @class */ (function () {
 }());
 var pizzaMaker = new PizzaBuilder();
 var pizza = pizzaMaker.changeIngredient3('chicken')
-    .addIngredient4('mushrooms')
     .addIngredient5('pepper')
     .addIngredient6('meat')
-    .changeSpecialSauce('super special sauce')
     .build();
 console.log(pizza);

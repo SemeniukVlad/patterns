@@ -1,43 +1,61 @@
 var TefalBlender = /** @class */ (function () {
-    function TefalBlender(material, power, cupVolume) {
+    function TefalBlender() {
+    }
+    TefalBlender.prototype.blenderProduction = function (material, power, cupVolume) {
         this.material = material;
         this.power = power;
         this.cupVolume = cupVolume;
-    }
+        console.log('Producing a blender using Tefal technologies and according to specifications');
+        return this;
+    };
     return TefalBlender;
 }());
 var PhillipsBlender = /** @class */ (function () {
-    function PhillipsBlender(material, power, cupVolume) {
+    function PhillipsBlender() {
+    }
+    PhillipsBlender.prototype.blenderProduction = function (material, power, cupVolume) {
         this.material = material;
         this.power = power;
         this.cupVolume = cupVolume;
-    }
+        console.log('Producing a blender according to specifications using super secret and new Phillips technologies');
+        return this;
+    };
     return PhillipsBlender;
 }());
 var TefalToaster = /** @class */ (function () {
-    function TefalToaster(slots, modes, power) {
+    function TefalToaster() {
+    }
+    TefalToaster.prototype.toasterProduction = function (slots, modes, power) {
         this.slots = slots;
         this.modes = modes;
         this.power = power;
-    }
+        console.log('Producing a regular toaster but it\'s made on a Tefal factory using their tech');
+        return this;
+    };
     return TefalToaster;
 }());
 var PhillipsToaster = /** @class */ (function () {
-    function PhillipsToaster(slots, modes, power) {
+    function PhillipsToaster() {
+    }
+    PhillipsToaster.prototype.toasterProduction = function (slots, modes, power) {
         this.slots = slots;
         this.modes = modes;
         this.power = power;
-    }
+        console.log('Producing a revolution in toasters right here on a Phillips factory');
+        return this;
+    };
     return PhillipsToaster;
 }());
 var TefalFactory = /** @class */ (function () {
     function TefalFactory() {
     }
     TefalFactory.prototype.newBlender = function () {
-        return new TefalBlender('metal', 1000, 800);
+        var factory = new TefalBlender();
+        return factory.blenderProduction('metal', 1000, 800);
     };
     TefalFactory.prototype.newToaster = function () {
-        return new TefalToaster(2, 7, 850);
+        var factory = new TefalToaster();
+        return factory.toasterProduction(2, 7, 850);
     };
     return TefalFactory;
 }());
@@ -45,10 +63,12 @@ var PhillipsFactory = /** @class */ (function () {
     function PhillipsFactory() {
     }
     PhillipsFactory.prototype.newBlender = function () {
-        return new PhillipsBlender('metal', 650, 500);
+        var factory = new PhillipsBlender();
+        return factory.blenderProduction('metal', 650, 500);
     };
     PhillipsFactory.prototype.newToaster = function () {
-        return new PhillipsToaster(2, 8, 830);
+        var factory = new PhillipsToaster();
+        return factory.toasterProduction(2, 8, 830);
     };
     return PhillipsFactory;
 }());

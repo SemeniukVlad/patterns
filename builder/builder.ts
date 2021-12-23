@@ -71,6 +71,6 @@ const pizza = pizzaMaker.changeIngredient3('chicken')
                         .addIngredient5('pepper')
                         .addIngredient6('meat')
                         .changeSpecialSauce('super special sauce')
-                        .build();
+                        .build()
 
 console.log(pizza);
