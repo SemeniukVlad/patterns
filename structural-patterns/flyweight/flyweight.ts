@@ -10,7 +10,7 @@ class Clock {
 class ClockFactory {
     private clocks: Clock[] = [];
 
-    public clockCheck(model: string, diameter: number, batteries: number, battery: string){
+    public clockCheck(model: string, diameter: number, batteries: number, battery: string): Clock{
         if (this.clocks[model]){
             return this.clocks[model];
         } else {

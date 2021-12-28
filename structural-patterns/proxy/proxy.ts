@@ -31,7 +31,7 @@ interface OfficeWorker{
 class RegularWorker implements OfficeWorker{
 
     constructor(
-        public clearanceLevel = 1
+        public clearanceLevel: number = 1
     ){}
 
     getClearance(): number {
@@ -42,7 +42,7 @@ class RegularWorker implements OfficeWorker{
 class HighProfileWorker implements OfficeWorker{
 
     constructor(
-        public clearanceLevel = 2
+        public clearanceLevel: number = 2
     ){}
 
     getClearance(): number {
