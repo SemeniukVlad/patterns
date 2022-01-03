@@ -42,7 +42,6 @@ var HighProfileWorker = /** @class */ (function () {
 }());
 var bob = new RegularWorker();
 var max = new HighProfileWorker();
-var building = new Building();
-var buildingSecurity = new BuildingProxy(building);
+var buildingSecurity = new BuildingProxy(new Building());
 buildingSecurity.enter(bob.getClearance());
 buildingSecurity.enter(max.getClearance());

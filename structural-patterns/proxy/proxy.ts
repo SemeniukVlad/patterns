@@ -52,7 +52,6 @@ class HighProfileWorker implements OfficeWorker{
 
 const bob = new RegularWorker();
 const max = new HighProfileWorker();
-const building = new Building();
-const buildingSecurity = new BuildingProxy(building);
+const buildingSecurity = new BuildingProxy(new Building());
 buildingSecurity.enter(bob.getClearance());
 buildingSecurity.enter(max.getClearance());
